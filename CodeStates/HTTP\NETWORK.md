@@ -173,3 +173,54 @@ OPTIONS * HTTP/1.1
 3. HTTP 버전에 따라 HTTP message의 구조가 달라집니다. 따라서 start line에 HTTP 버전을 함께 입력합니다.
 
 4. HTTP의 응답 메시지를 찾아볼 수 있다.
+
+
+## REST API
+
+ 1-1. REST
+
+- Representational State Transfer
+
+1-2. REST API
+
+- 웹에서 사용되는 데이터나 자원(Resource)을 HTTP URI로 표현하고, HTTP 프로토콜을 통해 요청과 응답을 정의하는 방식
+
+## REST 성숙도 모델
+
+### 2-1. 0단계
+
+- 단순히 HTTP 프로토콜을 사용하는 것
+
+### 2-2. 1단계
+
+- 개별 리소스(Resource)와의 통신을 준수
+- 개별 리소스에 맞는 엔드포인트(Endpoint)를 사용해야하며 요청하고 받는 자원에 대한 정보를 응답으로 전달해야 한다는 것이 1단계의 핵심
+- **엔드포인트** 작성 시에는 **명사** 형태의 단어로 작성하는 것이 바람직한 방법
+
+### 2-3. 2단계
+
+- CRUD(Create, Read, Update, Delete)에 맞게 적절한 HTTP 메서드를 사용하는 것에 중점
+- 멱등([idempotent](https://developer.mozilla.org/en-US/docs/Glossary/Idempotent)) : 매 요청마다 같은 리소스를 반환하는 특징
+
+참고 )
+
+- 2단계까지 적용하면 대체적으로 잘 작성된 API
+- 3단계까지 무조건적으로 모두 적용해야 하는 것은 아님.
+
+### 2-4. 3단계
+
+- **HATEOAS(Hypertext As The Engine Of Application State)** 하이퍼미디어 컨트롤을 적용
+- 응답에는 리소스의 URI를 포함한 **링크**
+ 요소를 삽입하여 작성
+
+
+## 3. Open API
+
+- 누구에게나 열려있는 API
+- 다. API마다 정해진 이용 수칙이 있고, 그 이용 수칙에 따라 제한사항(가격, 정보의 제한 등)이 있을 수 있음
+
+## 4. API Key
+
+- API를 이용하기 위해서는 **API Key**
+가 필요
+- API Key가 필요한 경우에는 로그인한 이용자에게 자원에 접근할 수 있는 권한을 API Key의 형태로 제공하고, 데이터를 요청할 때 API key를 같이 전달해야 원하는 응답을 받을 수 있음
